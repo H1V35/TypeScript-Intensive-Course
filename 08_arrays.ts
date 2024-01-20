@@ -55,6 +55,7 @@ type State = [string, (newName: string) => void];
 const [villain, setVillain]: State = useState("Thanos");
 
 // Tuple RGB codes example
-type RGB = [number, number, number];
+type RGB = readonly [number, number, number]; // <-- To prevent modifications to the array with methods like
+//                                                   'rgb.push(4)', we can make use of readonly.
 
 const rgb: RGB = [255, 255, 0]; // <-- Numbers from 0 to 255
